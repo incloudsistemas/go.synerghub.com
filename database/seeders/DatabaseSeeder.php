@@ -3,6 +3,13 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use Database\Seeders\Configs\CnaesSeeder;
+use Database\Seeders\Configs\CorporateQualificationsSeeder;
+use Database\Seeders\Configs\EconomicCategoriesSeeder;
+use Database\Seeders\Configs\LegalNaturesSeeder;
+use Database\Seeders\Configs\PerformanceAreasSeeder;
+use Database\Seeders\Workspace\ContactsSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +19,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            RolesAndPermissionsSeeder::class,
+            UsersSeeder::class,
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+            ContactsSeeder::class,
+
+            // CnaesSeeder::class,
+            // LegalNaturesSeeder::class,
+            // EconomicCategoriesSeeder::class,
+            // CorporateQualificationsSeeder::class,
+            // PerformanceAreasSeeder::class,
+        ]);
     }
 }
