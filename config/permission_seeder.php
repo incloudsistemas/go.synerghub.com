@@ -21,6 +21,8 @@ return [
 
             'Contatos P. Físicas'   => 'c,r,u,d',
             'Contatos P. Jurídicas' => 'c,r,u,d',
+            'Insiders'              => 'c,r,u,d',
+            'Produtos'              => 'c,r,u,d',
 
             'Cnaes'                     => 'c,r,u,d',
             'Naturezas Jurídicas'       => 'c,r,u,d',

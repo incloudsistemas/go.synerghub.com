@@ -31,18 +31,21 @@ class UserFactory extends Factory
             ?: ContactIndividual::class;
 
         // Create a Individual and its related Contact and Address
-        $individual = ContactIndividual::factory()->create();
+        $individual = ContactIndividual::factory()
+            ->create();
 
-        $contact = Contact::factory()->create([
-            'contactable_id'   => $individual->id,
-            'contactable_type' => $individualMorphName,
-        ]);
+        $contact = Contact::factory()
+            ->create([
+                'contactable_id'   => $individual->id,
+                'contactable_type' => $individualMorphName,
+            ]);
 
-        Address::factory()->create([
-            'addressable_id'   => $contact->id,
-            'addressable_type' => $contactMorphName,
-            'is_main'          => 1,
-        ]);
+        Address::factory()
+            ->create([
+                'addressable_id'   => $contact->id,
+                'addressable_type' => $contactMorphName,
+                'is_main'          => 1,
+            ]);
 
         return [
             'contact_id'        => $contact->id,

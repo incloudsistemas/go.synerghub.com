@@ -41,13 +41,23 @@ class Contact extends Model
     ];
 
     /**
+     * Get the insider associated with the contact.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function insider(): HasOne
+    {
+        return $this->hasOne(related: Insider::class);
+    }
+
+    /**
      * Get the user associated with the contact.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function user(): HasOne
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(related: User::class);
     }
 
     /**

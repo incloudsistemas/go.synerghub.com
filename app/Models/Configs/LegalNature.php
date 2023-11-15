@@ -3,9 +3,11 @@
 namespace App\Models\Configs;
 
 use App\Enums\Synerg\LegalNatureRole;
+use App\Models\Workspace\Insider;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class LegalNature extends Model
 {
@@ -22,6 +24,16 @@ class LegalNature extends Model
         'name',
         'slug',
     ];
+
+    /**
+     * The insiders that belong to the legal nature.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function insiders(): HasMany
+    {
+        return $this->hasMany(related: Insider::class);
+    }
 
     /**
      * Return the sluggable configuration array for this model.

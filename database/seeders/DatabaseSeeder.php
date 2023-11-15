@@ -10,6 +10,8 @@ use Database\Seeders\Configs\EconomicCategoriesSeeder;
 use Database\Seeders\Configs\LegalNaturesSeeder;
 use Database\Seeders\Configs\PerformanceAreasSeeder;
 use Database\Seeders\Workspace\ContactsSeeder;
+use Database\Seeders\Workspace\InsidersSeeder;
+use Database\Seeders\Workspace\ProductsSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,11 +27,14 @@ class DatabaseSeeder extends Seeder
 
             ContactsSeeder::class,
 
-            // CnaesSeeder::class,
-            // LegalNaturesSeeder::class,
-            // EconomicCategoriesSeeder::class,
-            // CorporateQualificationsSeeder::class,
-            // PerformanceAreasSeeder::class,
+            CnaesSeeder::class,
+            LegalNaturesSeeder::class,
+            EconomicCategoriesSeeder::class,
+            CorporateQualificationsSeeder::class,
+            PerformanceAreasSeeder::class,
+
+            InsidersSeeder::class,
+            ProductsSeeder::class,
         ]);
     }
 }

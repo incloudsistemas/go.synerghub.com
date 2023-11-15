@@ -21,6 +21,8 @@ class AuthServiceProvider extends ServiceProvider
 
         Models\Workspace\ContactIndividual::class  => Policies\Workspace\ContactIndividualPolicy::class,
         Models\Workspace\ContactLegalEntity::class => Policies\Workspace\ContactLegalEntityPolicy::class,
+        Models\Workspace\Insider::class            => Policies\Workspace\InsiderPolicy::class,
+        Models\Workspace\Product::class            => Policies\Workspace\ProductPolicy::class,
 
         Models\Configs\Cnae::class                   => Policies\Configs\CnaePolicy::class,
         Models\Configs\LegalNature::class            => Policies\Configs\LegalNaturePolicy::class,

@@ -2,9 +2,11 @@
 
 namespace App\Models\Configs;
 
+use App\Models\Workspace\Insider;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class EconomicCategory extends Model
 {
@@ -19,6 +21,16 @@ class EconomicCategory extends Model
         'name',
         'slug',
     ];
+
+    /**
+     * The insiders that belong to the economic category.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function insiders(): HasMany
+    {
+        return $this->hasMany(related: Insider::class);
+    }
 
     /**
      * Return the sluggable configuration array for this model.

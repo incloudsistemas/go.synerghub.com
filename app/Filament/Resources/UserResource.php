@@ -25,6 +25,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Support;
+use Illuminate\Database\Eloquent\Model;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
 
@@ -510,12 +511,13 @@ class UserResource extends Resource
         return $table
             ->striped()
             ->columns([
-                Tables\Columns\SpatieMediaLibraryImageColumn::make('avatar')
+                Tables\Columns\TextColumn::make('contact.contactable.avatar')
                     ->label('')
-                    ->collection('avatar')
-                    ->conversion('thumb')
-                    ->size(45)
-                    ->circular(),
+                    ->formatStateUsing(
+                        fn (ContactService $service, Model $record): string =>
+                        $service->getTableAvatar(contact: $record->contact)
+                    )
+                    ->html(),
                 Tables\Columns\TextColumn::make('name')
                     ->label(__('Nome'))
                     ->searchable()

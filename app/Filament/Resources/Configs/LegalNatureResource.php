@@ -26,7 +26,7 @@ class LegalNatureResource extends Resource
 
     protected static ?string $modelLabel = 'Natureza Jurídica';
 
-    protected static ?string $pluralModelLabel = 'Naturezas Jurídica';
+    protected static ?string $pluralModelLabel = 'Naturezas Jurídicas';
 
     protected static ?string $navigationGroup = 'Configurações';
 
@@ -73,7 +73,17 @@ class LegalNatureResource extends Resource
                     ->label(__('Categoria'))
                     ->searchable()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('Cadastro'))
+                    ->dateTime('d/m/Y H:i')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('Últ. atualização'))
+                    ->dateTime('d/m/Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort(column: 'created_at', direction: 'desc')
             ->filters([
                 //
             ])

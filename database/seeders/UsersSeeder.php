@@ -56,7 +56,7 @@ class UsersSeeder extends Seeder
             'name'              => $individual->name,
             'email'             => $individual->email,
             'email_verified_at' => now(),
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('go#synerghub'),
             'remember_token'    => Str::random(10),
             // 'api_token'         => Hash::make('contato@incloudsistemas'),
         ]);

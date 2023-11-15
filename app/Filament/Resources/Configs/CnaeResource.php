@@ -59,7 +59,17 @@ class CnaeResource extends Resource
                     ->label(__('Nome'))
                     ->searchable()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('Cadastro'))
+                    ->dateTime('d/m/Y H:i')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('Últ. atualização'))
+                    ->dateTime('d/m/Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort(column: 'created_at', direction: 'desc')
             ->filters([
                 //
             ])

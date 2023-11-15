@@ -19,12 +19,13 @@
         "bensampo/laravel-enum": "^6.6",
         "browner12/helpers": "^3.5",
         "cviebrock/eloquent-sluggable": "^10.0",
-        "filament/filament": "3.0-stable",
-        "filament/spatie-laravel-media-library-plugin": "3.0-stable",
-        "guzzlehttp/guzzle": "^7.2",
+        "filament/filament": "^3.0-stable",
+        "filament/spatie-laravel-media-library-plugin": "^3.0-stable",
+        "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "livewire/livewire": "^3.0@beta",
         "spatie/laravel-permission": "^6.0",
         "z3d0x/filament-logger": "^0.6.1"
     },
@@ -33,7 +34,6 @@
         "laravel-lang/common": "^5.0",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
-        "lucascudo/laravel-pt-br-localization": "^2.0",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.1",
@@ -81,6 +81,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

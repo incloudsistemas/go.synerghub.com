@@ -13,6 +13,20 @@ class EconomicCategoriesSeeder extends Seeder
      */
     public function run(): void
     {
-        EconomicCategory::factory(10)->create();
+        // EconomicCategory::factory(10)
+        //     ->create();
+
+        $categoriesData = [
+            ['name' => 'Agronegócios'],
+            ['name' => 'Comércio'],
+            ['name' => 'Governo'],
+            ['name' => 'Indústria'],
+            ['name' => 'Serviços'],
+            ['name' => 'Terceiro Setor'],
+        ];
+
+        foreach ($categoriesData as $categoryData) {
+            EconomicCategory::create($categoryData);
+        }
     }
 }

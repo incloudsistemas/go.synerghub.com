@@ -66,7 +66,7 @@ class User extends Authenticatable implements FilamentUser, HasMedia
      */
     public function contact(): BelongsTo
     {
-        return $this->belongsTo(Contact::class);
+        return $this->belongsTo(related: Contact::class);
     }
 
     public function canAccessPanel(Panel $panel): bool

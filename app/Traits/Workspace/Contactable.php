@@ -49,8 +49,7 @@ trait Contactable
 
     public function getAvatarAttribute(): ?Media
     {
-        $avatar = $this->getMedia('avatar')
-            ->first();
+        $avatar = $this->getFirstMedia('avatar');
 
         return $avatar ?? null;
     }
